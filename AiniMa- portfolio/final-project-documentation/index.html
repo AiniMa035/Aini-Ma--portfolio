@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- meta viewport tag needed to make site responsive on mobile devices https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Aini Ma</title>
+
+        <!-- including for some global styling -->
+        <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+    <body>
+        <!-- if you have sub-pages think about adding a simple back button -->
+        <nav>
+            <a href="../">HOME</a>
+        </nav>
+        <header class="documentation-header">
+            <section class="center-text">
+                <h1>Dancing Miracles</h1>
+                <h2>by AiniMa</h6>
+                <p>This is an interactive art performance in which I use MAX/MSP combined with kinect motion capture to recognise the movement of the human skeleton to influence the aggregation and dispersion of particles.</p> 
+            </section>
+        </header>
+
+        <main class="documentation-page">
+            <section>
+                <div class="responsive-video centered-content">
+                    <iframe title="vimeo-player" src="https://vimeo.com/822871776?share=copy" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </section>
+            <section>
+                <h3>Introduction</h3>
+                <p>Motion is a fundamental property of this world, and vibration is a form of motion. On a philosophical level, the world is in absolute motion, stillness is relative, whether it is a distant star or an object close at hand, motion is going on all the time. I was inspired by the movement of particles in the universe, and the theory of movement between molecules and particles inspired me to make an art installation that could be interacted with through the programming knowledge I have learnt combined with motion capture .</p>
+            </section>
+            <section>
+                <h3>Concept and Background Research</h3>
+                
+                <p>The movement of particles in the universe was my first inspiration, and in a sense I was inspired by the Rain Room installation designed by the London-based artist team Random Internation.
+                    The interactive art installation, called Rain Room, allows the viewer to walk unprotected into real rain without getting wet. The installation creates a relatively enclosed environment with only a single beam of light running parallel to the roof, demonstrating the relationship between man and man and man and nature. After my research, the reason why you don't get wet in the Rain Room is that there are many 3D tracking cameras on the ceiling, which accurately identify the position of the visitor and transmit it to the computer, which closes the water valve accordingly.</p>
+                <p> </p>
+                
+                <!-- if you have a full width image try make it not too tall -->
+                <img src="../assets/images/1.png"/>
+                
+            </section>
+            <section>
+                <h3>Technical Implementation</h3>
+                <p> I used a kinect external device as the key to my motion capture implementation. After debugging the kinect to recognise the human skeleton, the angles of the hip joint, the left wrist and the left shoulder, the angles of the right wrist and the right shoulder, and the hand open state (0,1) were combined into five osc data at the address /gesture and sent to MAX/MSP via port 6100 to the MAX/MSP .
+                    Once MAX/MSP has received the data, the hip coordinates are used as the centre coordinates of the particle, causing the particle to follow the body, and the two angles are used as the attraction of the centre of the particle; the movement of the interactor's hand then affects the aggregation and dispersion of the particle.</p>
+                <!-- example of styling for three images, you can write your own styling -->
+                <div class="flex-container flex-basis-third">
+                    <div class="flex-item">
+                        <img src="../assets/images/2.png"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/3.png"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/4.png"/>
+                    </div>
+                </div>
+                
+                <p>Overall, I am happy with what I have done. This was my first attempt at using the Kinect and it worked largely as I expected at the outset.  </p>
+            
+             
+         
+            </section>
+            <section>
+                <h3>Reflection and Future Development</h3>
+                <p>This was my first attempt at using the Kinect and it worked largely as I expected at the outset. After constantly debugging the data, the hip coordinates were used as the central coordinates for the particles, and the movement of the particles and the movement speed of the experiencer using the interactive device remained largely in sync with each other. I'd love to investigate it further and explore motion capture further if the opportunity arises in the future!
+                    Regarding the video, I hope to shoot it in the next exhibition we are going to have, and I will probably take a projection instead of a big screen (I want to choose which works better live).
+                    </p>
+            </section>
+            <section>
+                <h3>References</h3>
+                <ul>
+                    <li>“Rain Room”，Random Internation，at<https://www.moma.org/calendar/exhibitions/1352></li>
+                    <li>Kinect，at<https://en.wikipedia.org/wiki/Kinect></li>
+                    <li>Kinect Skeletal tracking, at <https://kinect-tutorials-zh.readthedocs.io/zh_CN/latest/kinect1/4_SkeletalTracking.html>></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <!-- normally information like contact details etc  -->
+            <!-- read more about semantic HTML https://www.w3schools.com/html/html5_semantic_elements.asp -->
+            
+         </footer>
+    </body>
+</html>
